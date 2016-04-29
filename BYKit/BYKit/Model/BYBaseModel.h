@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface BYBaseModel : NSObject
+
+/*
+ *  初始化方法
+ */
 - (instancetype)initWithDic:(NSDictionary *)dic;
+
 @end
