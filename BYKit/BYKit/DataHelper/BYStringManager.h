@@ -14,16 +14,12 @@
  *  将上传的数组转换成json字符串返回
  */
 + (NSString *)getJsonString:(id)message;
-
+/*
+ *  将请求的Json数据转成NSDictionary
+ */
++ (NSDictionary *)jsonStrToDic:(NSString *)jsonStr;
 /*
  *  判断字符串是否为空
  */
 + (BOOL)isBlankString:(NSString *)string;
-
-/**
- *  仿QQ空间时间显示
- *  @param string eg:2015年5月24日 02时21分30秒
- */
-+ (NSString *)format:(NSString *)string;
-
 @end

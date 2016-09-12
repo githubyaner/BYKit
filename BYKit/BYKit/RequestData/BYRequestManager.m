@@ -40,7 +40,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:URLTmp]];
     self.operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [_operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *jsonDic = [BYRequestHelper jsonStrToDic:operation.responseString];
+        NSDictionary *jsonDic = [BYStringManager jsonStrToDic:operation.responseString];
         master(jsonDic, operation.responseString, YES);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         master(nil, operation.responseString, NO);
@@ -61,7 +61,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:URLTmp]];
     self.operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [_operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *jsonDic = [BYRequestHelper jsonStrToDic:operation.responseString];
+        NSDictionary *jsonDic = [BYStringManager jsonStrToDic:operation.responseString];
         master(jsonDic, operation.responseString, YES);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         master(nil, operation.responseString, NO);
@@ -86,7 +86,7 @@
     [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];//设置相应内容类型
     self.operation = [manager POST:self.urlString parameters:self.parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *jsonDic = [BYRequestHelper jsonStrToDic:operation.responseString];
+        NSDictionary *jsonDic = [BYStringManager jsonStrToDic:operation.responseString];
         master(jsonDic, operation.responseString, YES);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         master(nil, operation.responseString, NO);
@@ -110,7 +110,7 @@
     [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];//设置相应内容类型
     self.operation = [manager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *jsonDic = [BYRequestHelper jsonStrToDic:operation.responseString];
+        NSDictionary *jsonDic = [BYStringManager jsonStrToDic:operation.responseString];
         master(jsonDic, operation.responseString, YES);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         master(nil, operation.responseString, NO);

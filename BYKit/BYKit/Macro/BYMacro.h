@@ -10,12 +10,24 @@
 #define BYMacro_h
 
 
-//My Macro
-#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.width == 320) ? YES : NO)
+/*
+ *  设备类型
+ */
+#pragma mark - 设备类型
+
+#define IS_IPhone5 (([[UIScreen mainScreen] bounds].size.width == 320) ? YES : NO)
 #define IS_IPhone6 (375 == [[UIScreen mainScreen] bounds].size.width ? YES : NO)
 #define IS_IPhone6plus (414 == [[UIScreen mainScreen] bounds].size.width ? YES : NO)
 
+#define kiPhone4     ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kiPhone5     ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kiPhone6     ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kiPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
 
+
+/*
+ *  屏幕相关
+ */
 #define BYViewWidth [UIScreen mainScreen].bounds.size.width
 #define BYViewHeight [UIScreen mainScreen].bounds.size.height
 #define BYBounds [UIScreen mainScreen].bounds
@@ -25,13 +37,15 @@
 #define BYCellHeight self.frame.size.height
 
 
-#define BYVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+/*
+ *  Session
+ */
+#define BYSession(str) [NSString stringWithFormat:@"%@", str]
 
-
-#define Session(str) [NSString stringWithFormat:@"%@", str]
-
-
-#define BYAlertView(errorStr) [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"%@", errorStr] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil]
+/*
+ *  Alert and Progress
+ */
+#define BYAlertView(title, errorStr) [[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"%@", errorStr] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil]
 
 #define BYHUD(message, delay) \
 \
@@ -68,25 +82,25 @@ hud.labelText = [NSString stringWithFormat:@"%@", string];\
 
 
 
-#pragma mark - 设备类型
-#define kiPhone4     ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
-#define kiPhone5     ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
-#define kiPhone6     ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
-#define kiPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
-
-
-#pragma mark - 设备信息
+/*
+ *  设备详情
+ */
 #define kIOS_VERSION    [[[UIDevice currentDevice] systemVersion] floatValue]
 #define kDEVICE_MODEL   [[UIDevice currentDevice] model]
 #define kIS_IPAD        ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
-#define kisRetina       ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
 #define kAPP_NAME            [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
 #define kAPP_VERSION         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 #define kAPP_SUB_VERSION     [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 #define kUDeviceIdentifier   [[UIDevice currentDevice] uniqueDeviceIdentifier]
+/*
+ *  系统版本
+ */
+#define BYVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
 
-#pragma mark - 常用宏定义
+/*
+ *  常用单例以及方法
+ */
 #define kWS(weakSelf)          __weak __typeof(&*self)weakSelf = self;
 #define kSCREEN_WIDTH          ([UIScreen mainScreen].bounds.size.width)
 #define kSCREEN_HEIGHT         ([UIScreen mainScreen].bounds.size.height)
@@ -102,27 +116,29 @@ hud.labelText = [NSString stringWithFormat:@"%@", string];\
 #define kRadianToDegrees(radian)    (radian*180.0)/(M_PI)
 
 
-#pragma mark - ios版本判断
-
+/*
+ *  iOS版本
+ */
 #define kIOS5_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"5.0"] != NSOrderedAscending )
 #define kIOS6_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"6.0"] != NSOrderedAscending )
 #define kIOS7_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
 #define kIOS8_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"8.0"] != NSOrderedAscending )
+#define kIOS9_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"9.0"] != NSOrderedAscending )
+#define kIOS10_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"10.0"] != NSOrderedAscending )
 
 
 #pragma mark - 是否为空或是[NSNull null]
-
 #define kNotNilAndNull(_ref)  (((_ref) != nil) && (![(_ref) isEqual:[NSNull null]]))
 #define kIsNilOrNull(_ref)   (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]))
+
 
 #pragma mark - 图片资源获取
 #define kIMGFROMBUNDLE( X )     [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:X ofType:@""]]
 #define kIMGNAMED( X )         [UIImage imageNamed:X]
 
+
 //获取头像(沙盒)----传入参数必须带后缀类型
-#define kUSERIMAGE(name) [[UIImage alloc] initWithContentsOfFile:[NSString stringWithFormat:@"%@/Documents/%@", NSHomeDirectory(), name]]
-
-
+#define kSandBoxImage(name) [[UIImage alloc] initWithContentsOfFile:[NSString stringWithFormat:@"%@/Documents/%@", NSHomeDirectory(), name]]
 
 
 #pragma mark - 颜色

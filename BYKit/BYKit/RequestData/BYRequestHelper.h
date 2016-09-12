@@ -9,16 +9,23 @@
 #import <Foundation/Foundation.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 
-@interface BYRequestHelper : NSObject
+static NSString * _Nonnull BYNetworkState = @"BYNetworkState";
+static NSString * _Nonnull BYNetworkState_NotReachable = @"BYNetworkState_NotReachable";
+static NSString * _Nonnull BYNetworkState_WWAN = @"BYNetworkState_WWAN";
+static NSString * _Nonnull BYNetworkState_WIFI = @"BYNetworkState_WIFI";
 
+
+@interface BYRequestHelper : NSObject
 /*
  *  判断当前网络是否可用
  */
 + (BOOL)isNetworkEnabled;
-
 /*
- *  将请求的Json数据转成NSDictionary
+ *  开启网络状态检测
  */
-+ (NSDictionary *)jsonStrToDic:(NSString *)jsonStr;
-
++ (void)startTheNetworkStateMonitoring;
+/*
+ *  关闭网络状态检测
+ */
++ (void)stopTheNetworkStateMonitoring;
 @end
