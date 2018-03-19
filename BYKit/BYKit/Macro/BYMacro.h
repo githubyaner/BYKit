@@ -15,37 +15,53 @@
  */
 #pragma mark - 设备类型
 
-#define IS_IPhone5 (([[UIScreen mainScreen] bounds].size.width == 320) ? YES : NO)
-#define IS_IPhone6 (375 == [[UIScreen mainScreen] bounds].size.width ? YES : NO)
-#define IS_IPhone6plus (414 == [[UIScreen mainScreen] bounds].size.width ? YES : NO)
+#define IS_IPhone4 ((320 == [[UIScreen mainScreen] bounds].size.width && 480 == [[UIScreen mainScreen] bounds].height) ? YES : NO)
+#define IS_IPhone5 ((320 == [[UIScreen mainScreen] bounds].size.width && 568 == [[UIScreen mainScreen] bounds].height) ? YES : NO)
+#define IS_IPhone6 ((375 == [[UIScreen mainScreen] bounds].size.width) ? YES : NO)
+#define IS_IPhone6plus ((414 == [[UIScreen mainScreen] bounds].size.width) ? YES : NO)
+#define IS_iPhoneX ((375 == [[UIScreen mainScreen] bounds].size.width && 812 == [[UIScreen mainScreen] bounds].height) ? YES : NO)
 
 #define kiPhone4     ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
 #define kiPhone5     ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 #define kiPhone6     ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
 #define kiPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kiPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
 
 /*
  *  屏幕相关
  */
-#define BYViewWidth [UIScreen mainScreen].bounds.size.width
-#define BYViewHeight [UIScreen mainScreen].bounds.size.height
-#define BYBounds [UIScreen mainScreen].bounds
+#pragma mark - 屏幕相关
 
+#define BYViewWidth     [UIScreen mainScreen].bounds.size.width
+#define BYViewHeight    [UIScreen mainScreen].bounds.size.height
+#define BYBounds        [UIScreen mainScreen].bounds
+#define BYStatusBarAndNavigationBarHeight (kiPhoneX ? 88.f : 64.f)
+#define BYTabbarHeight  (kiPhoneX ? (49.f + 34.f) : 49.f)
+#define BYSafeAreaBottomHeight (kiPhoneX ? 34.f : 0.0)
+#define BYHeightCoefficient (kiPhoneX ? 667.0 / 667.0 : BYViewHeight / 667.0)
 
-#define BYCellWidth self.frame.size.width
-#define BYCellHeight self.frame.size.height
+#define BYContentVWidth self.frame.size.width
+#define BYContentVHeight self.frame.size.height
 
 
 /*
  *  Session
  */
+#pragma mark - Session
+
 #define BYSession(str) [NSString stringWithFormat:@"%@", str]
 
 /*
  *  Alert and Progress
  */
-#define BYAlertView(title, errorStr) [[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"%@", errorStr] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil]
+#pragma mark - Alert and Progress
+
+#define BYOldAlertView(title, errorStr) [[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"%@", errorStr] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil]
+
+#define BYAlertView(title, messageStr, viewController) UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:messageStr preferredStyle:UIAlertControllerStyleAlert];\
+[alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];\
+[viewController presentViewController:alertController animated:YES completion:nil];
 
 #define BYHUD(message, delay) \
 \
@@ -81,10 +97,19 @@ hud.labelText = [NSString stringWithFormat:@"%@", string];\
 \
 
 
+/*
+ *  MJRefresh iOS 11适配
+ */
+#pragma mark - MJRefresh iOS 11适配
+
+#define BYAdjustsScrollViewInsetNever(controller, view) if(@available(iOS 11.0, *)) {view.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;} else if([controller isKindOfClass:[UIViewController class]]) {controller.automaticallyAdjustsScrollViewInsets = false;}
+
 
 /*
  *  设备详情
  */
+#pragma mark - 设备详情
+
 #define kIOS_VERSION    [[[UIDevice currentDevice] systemVersion] floatValue]
 #define kDEVICE_MODEL   [[UIDevice currentDevice] model]
 #define kIS_IPAD        ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
@@ -92,63 +117,84 @@ hud.labelText = [NSString stringWithFormat:@"%@", string];\
 #define kAPP_VERSION         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 #define kAPP_SUB_VERSION     [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 #define kUDeviceIdentifier   [[UIDevice currentDevice] uniqueDeviceIdentifier]
+
+
 /*
  *  系统版本
  */
+#pragma mark - 系统版本
+
 #define BYVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
 
 /*
  *  常用单例以及方法
  */
-#define kWS(weakSelf)          __weak __typeof(&*self)weakSelf = self;
-#define kSCREEN_WIDTH          ([UIScreen mainScreen].bounds.size.width)
-#define kSCREEN_HEIGHT         ([UIScreen mainScreen].bounds.size.height)
-#define kUSER_DEFAULT          [NSUserDefaults standardUserDefaults]
-#define kNOTIFICATION_DEFAULT  [NSNotificationCenter defaultCenter]
-#define kIMAGENAMED(_pointer)  [UIImage imageNamed:[UIUtil imageName:_pointer]]
-#define kLOADIMAGE(file,ext)   [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:file ofType:ext]]
+#pragma mark - 常用单例以及方法
 
-#define kScreenWidthScaleSize           (MIN(SCREEN_WIDTH,SCREEN_HEIGHT)/320.0)
-#define kScreenWidthScaleSizeByIphone6  (MIN(SCREEN_WIDTH,SCREEN_HEIGHT)/375.0)
+#define kWeakSelf(weakSelf)     __weak __typeof(&*self)weakSelf = self;
+#define kUSER_DEFAULT           [NSUserDefaults standardUserDefaults]
+#define kNOTIFICATION_DEFAULT   [NSNotificationCenter defaultCenter]
+
+#define kIMAGENAMED(imageName)  [UIImage imageNamed:imageName]
+#define kLOADIMAGE(file, ext)   [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:file ofType:ext]]
+#define kSANDBOXIMAGE(name)     [[UIImage alloc] initWithContentsOfFile:[NSString stringWithFormat:@"%@/Documents/%@", NSHomeDirectory(), name]]
+
+#define kCurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
+#define kLocal(x, ...) NSLocalizedString(x, nil)
+
+//G－C－D
+#define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+#define MAIN(block) dispatch_async(dispatch_get_main_queue(),block)
 
 #define kDegreesToRadian(x)         (M_PI * (x) / 180.0)
 #define kRadianToDegrees(radian)    (radian*180.0)/(M_PI)
 
 
 /*
- *  iOS版本
+ *  是否为空或是[NSNull null]
  */
-#define kIOS5_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"5.0"] != NSOrderedAscending )
-#define kIOS6_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"6.0"] != NSOrderedAscending )
-#define kIOS7_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
-#define kIOS8_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"8.0"] != NSOrderedAscending )
-#define kIOS9_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"9.0"] != NSOrderedAscending )
-#define kIOS10_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"10.0"] != NSOrderedAscending )
-
-
 #pragma mark - 是否为空或是[NSNull null]
-#define kNotNilAndNull(_ref)  (((_ref) != nil) && (![(_ref) isEqual:[NSNull null]]))
-#define kIsNilOrNull(_ref)   (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]))
+
+#define kNotNilAndNull(_ref)    (((_ref) != nil) && (![(_ref) isEqual:[NSNull null]]))
+#define kIsNilOrNull(_ref)      (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]))
 
 
-#pragma mark - 图片资源获取
-#define kIMGFROMBUNDLE( X )     [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:X ofType:@""]]
-#define kIMGNAMED( X )         [UIImage imageNamed:X]
-
-
-//获取头像(沙盒)----传入参数必须带后缀类型
-#define kSandBoxImage(name) [[UIImage alloc] initWithContentsOfFile:[NSString stringWithFormat:@"%@/Documents/%@", NSHomeDirectory(), name]]
-
-
+/*
+ *  颜色
+ */
 #pragma mark - 颜色
+
 #define kCOLOR_RGB(r,g,b)     [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.0]
 #define kCOLOR_RGBA(r,g,b,a)  [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 
 
+/*
+ *  定义字号
+ */
 #pragma mark - 定义字号
+
 #define kFONT_TITLE(X)     [UIFont systemFontSize:X]
 #define kFONT_CONTENT(X)   [UIFont systemFontSize:X]
+
+
+/*
+ *  DEBUG Log
+ */
+#pragma mark - DEBUG Log
+//DLog
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define DLog(...)
+#endif
+
+//ULog
+#ifdef DEBUG
+#   define ULog(fmt, ...)  { UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%s\n [Line %d] ", __PRETTY_FUNCTION__, __LINE__] message:[NSString stringWithFormat:fmt, ##__VA_ARGS__]  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil]; [alert show];}
+#else
+#   define ULog(...)
+#endif
 
 
 #endif /* BYMacro_h */

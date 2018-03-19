@@ -18,6 +18,11 @@
 @property (nonatomic, strong) BYRequestManager*requestManager;
 
 /*
+ *  回调方法
+ */
+@property (nonatomic, copy) void(^bySendMessageBlock)(id message);
+
+/*
  *  添加loading
  */
 - (void)addProgress;
