@@ -115,6 +115,8 @@
 		735E32BC1D868FF4000004D1 /* BYFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E32BA1D868FF3000004D1 /* BYFileManager.m */; };
 		735E32BF1D869197000004D1 /* BYImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 735E32BD1D869197000004D1 /* BYImageManager.h */; };
 		735E32C01D869197000004D1 /* BYImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E32BE1D869197000004D1 /* BYImageManager.m */; };
+		73C544CD2089FBB400474BC2 /* UIView+BYSeat.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C544CB2089FBB400474BC2 /* UIView+BYSeat.h */; };
+		73C544CE2089FBB400474BC2 /* UIView+BYSeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C544CC2089FBB400474BC2 /* UIView+BYSeat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +241,8 @@
 		735E32BA1D868FF3000004D1 /* BYFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYFileManager.m; sourceTree = "<group>"; };
 		735E32BD1D869197000004D1 /* BYImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYImageManager.h; sourceTree = "<group>"; };
 		735E32BE1D869197000004D1 /* BYImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYImageManager.m; sourceTree = "<group>"; };
+		73C544CB2089FBB400474BC2 /* UIView+BYSeat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+BYSeat.h"; sourceTree = "<group>"; };
+		73C544CC2089FBB400474BC2 /* UIView+BYSeat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+BYSeat.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -533,6 +537,8 @@
 			children = (
 				735E32B51D8687A1000004D1 /* UIControl+BYContinuous.h */,
 				735E32B61D8687A1000004D1 /* UIControl+BYContinuous.m */,
+				73C544CB2089FBB400474BC2 /* UIView+BYSeat.h */,
+				73C544CC2089FBB400474BC2 /* UIView+BYSeat.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -559,6 +565,7 @@
 				732215A61CD1ED3F002A0792 /* SDImageCache.h in Headers */,
 				732215B31CD1ED3F002A0792 /* SDWebImagePrefetcher.h in Headers */,
 				735E32B71D8687A1000004D1 /* UIControl+BYContinuous.h in Headers */,
+				73C544CD2089FBB400474BC2 /* UIView+BYSeat.h in Headers */,
 				732215B91CD1ED3F002A0792 /* UIImage+MultiFormat.h in Headers */,
 				732215B71CD1ED3F002A0792 /* UIImage+GIF.h in Headers */,
 				732215B01CD1ED3F002A0792 /* SDWebImageManager.h in Headers */,
@@ -705,6 +712,7 @@
 				7301EFE11CD0951600B50219 /* UIImageView+AFNetworking.m in Sources */,
 				7301F0071CD0951600B50219 /* NSData+CommonCrypto.m in Sources */,
 				7301EFC41CD0951600B50219 /* BYBaseModel.m in Sources */,
+				73C544CE2089FBB400474BC2 /* UIView+BYSeat.m in Sources */,
 				7301EFC81CD0951600B50219 /* AFHTTPRequestOperationManager.m in Sources */,
 				7301F0021CD0951600B50219 /* AESCrypt.m in Sources */,
 				732215AD1CD1ED3F002A0792 /* SDWebImageDownloader.m in Sources */,
