@@ -28,7 +28,7 @@ FOUNDATION_EXPORT const unsigned char BYKitVersionString[];
 
 #import "BYProgress.h"
 
-#import "BYDataManager.h"
+#import "BYDateManager.h"
 #import "BYStringManager.h"
 #import "BYFileManager.h"
 #import "BYImageManager.h"

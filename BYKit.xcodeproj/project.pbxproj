@@ -10,8 +10,8 @@
 		7301EEC91CD094DC00B50219 /* BYKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7301EEC81CD094DC00B50219 /* BYKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7301EED01CD094DD00B50219 /* BYKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7301EEC51CD094DC00B50219 /* BYKit.framework */; };
 		7301EED51CD094DD00B50219 /* BYKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7301EED41CD094DD00B50219 /* BYKitTests.m */; };
-		7301EFBD1CD0951600B50219 /* BYDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7301EEE11CD0951600B50219 /* BYDataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7301EFBE1CD0951600B50219 /* BYDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7301EEE21CD0951600B50219 /* BYDataManager.m */; };
+		7301EFBD1CD0951600B50219 /* BYDateManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7301EEE11CD0951600B50219 /* BYDateManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7301EFBE1CD0951600B50219 /* BYDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7301EEE21CD0951600B50219 /* BYDateManager.m */; };
 		7301EFBF1CD0951600B50219 /* BYStringManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7301EEE31CD0951600B50219 /* BYStringManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7301EFC01CD0951600B50219 /* BYStringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7301EEE41CD0951600B50219 /* BYStringManager.m */; };
 		7301EFC11CD0951600B50219 /* BYMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = 7301EEE61CD0951600B50219 /* BYMacro.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -136,8 +136,8 @@
 		7301EECF1CD094DD00B50219 /* BYKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BYKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7301EED41CD094DD00B50219 /* BYKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYKitTests.m; sourceTree = "<group>"; };
 		7301EED61CD094DD00B50219 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7301EEE11CD0951600B50219 /* BYDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYDataManager.h; sourceTree = "<group>"; };
-		7301EEE21CD0951600B50219 /* BYDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYDataManager.m; sourceTree = "<group>"; };
+		7301EEE11CD0951600B50219 /* BYDateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYDateManager.h; sourceTree = "<group>"; };
+		7301EEE21CD0951600B50219 /* BYDateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYDateManager.m; sourceTree = "<group>"; };
 		7301EEE31CD0951600B50219 /* BYStringManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYStringManager.h; sourceTree = "<group>"; };
 		7301EEE41CD0951600B50219 /* BYStringManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYStringManager.m; sourceTree = "<group>"; };
 		7301EEE61CD0951600B50219 /* BYMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYMacro.h; sourceTree = "<group>"; };
@@ -319,8 +319,8 @@
 		7301EEE01CD0951600B50219 /* DataHelper */ = {
 			isa = PBXGroup;
 			children = (
-				7301EEE11CD0951600B50219 /* BYDataManager.h */,
-				7301EEE21CD0951600B50219 /* BYDataManager.m */,
+				7301EEE11CD0951600B50219 /* BYDateManager.h */,
+				7301EEE21CD0951600B50219 /* BYDateManager.m */,
 				7301EEE31CD0951600B50219 /* BYStringManager.h */,
 				7301EEE41CD0951600B50219 /* BYStringManager.m */,
 				735E32B91D868FF3000004D1 /* BYFileManager.h */,
@@ -595,7 +595,7 @@
 				7301F0761CD0951600B50219 /* BYBaseViewController.h in Headers */,
 				7301F0151CD0951600B50219 /* MyMD5.h in Headers */,
 				7301F0011CD0951600B50219 /* AESCrypt.h in Headers */,
-				7301EFBD1CD0951600B50219 /* BYDataManager.h in Headers */,
+				7301EFBD1CD0951600B50219 /* BYDateManager.h in Headers */,
 				7301EFE01CD0951600B50219 /* UIImageView+AFNetworking.h in Headers */,
 				7301EFC21CD0951600B50219 /* BYOtherMacro.h in Headers */,
 				735E32BF1D869197000004D1 /* BYImageManager.h in Headers */,
@@ -753,7 +753,7 @@
 				7322157A1CD1AA94002A0792 /* BYRequestHelper.m in Sources */,
 				732215A71CD1ED3F002A0792 /* SDImageCache.m in Sources */,
 				7301EFD71CD0951600B50219 /* AFURLSessionManager.m in Sources */,
-				7301EFBE1CD0951600B50219 /* BYDataManager.m in Sources */,
+				7301EFBE1CD0951600B50219 /* BYDateManager.m in Sources */,
 				732215A51CD1ED3F002A0792 /* NSData+ImageContentType.m in Sources */,
 				732215B11CD1ED3F002A0792 /* SDWebImageManager.m in Sources */,
 				7301EFC01CD0951600B50219 /* BYStringManager.m in Sources */,

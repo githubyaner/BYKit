@@ -1,5 +1,5 @@
 //
-//  BYDataManager.h
+//  BYDateManager.h
 //  BYKit
 //
 //  Created by SunShine.Rock on 16/4/26.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BYDataManager : NSObject
+@interface BYDateManager : NSObject
 /*
  *  获取当前日期,如:2015-05-21
  */
