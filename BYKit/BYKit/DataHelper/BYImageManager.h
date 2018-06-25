@@ -16,6 +16,11 @@
 + (UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize;
 
 /*
+ *  压缩图片至指定的大小KB.(文件压缩+尺寸压缩)
+ */
+- (NSData *)compressWithImage:(UIImage *)image maxKB:(NSInteger)maxKB;
+
+/*
  *  读取本地图片
  */
 + (UIImage *)getLocationImage:(NSString *)key;

@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Kevin. All rights reserved.
 //
 
-#import "BYDataManager.h"
+#import "BYDateManager.h"
 
 @implementation BYDateManager
 #pragma mark - 获取当前日期,如:2015-05-21
