@@ -109,6 +109,8 @@
 		732215C01CD1ED3F002A0792 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7322159D1CD1ED3F002A0792 /* UIImageView+WebCache.m */; };
 		732215C11CD1ED3F002A0792 /* UIView+WebCacheOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7322159E1CD1ED3F002A0792 /* UIView+WebCacheOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		732215C21CD1ED3F002A0792 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7322159F1CD1ED3F002A0792 /* UIView+WebCacheOperation.m */; };
+		734AED4B20E634CE00113ADE /* BDYDevicePermissionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 734AED4920E634CE00113ADE /* BDYDevicePermissionManager.h */; };
+		734AED4C20E634CE00113ADE /* BDYDevicePermissionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 734AED4A20E634CE00113ADE /* BDYDevicePermissionManager.m */; };
 		735E32B71D8687A1000004D1 /* UIControl+BYContinuous.h in Headers */ = {isa = PBXBuildFile; fileRef = 735E32B51D8687A1000004D1 /* UIControl+BYContinuous.h */; };
 		735E32B81D8687A1000004D1 /* UIControl+BYContinuous.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E32B61D8687A1000004D1 /* UIControl+BYContinuous.m */; };
 		735E32BB1D868FF4000004D1 /* BYFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 735E32B91D868FF3000004D1 /* BYFileManager.h */; };
@@ -117,6 +119,10 @@
 		735E32C01D869197000004D1 /* BYImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E32BE1D869197000004D1 /* BYImageManager.m */; };
 		73C544CD2089FBB400474BC2 /* UIView+BYSeat.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C544CB2089FBB400474BC2 /* UIView+BYSeat.h */; };
 		73C544CE2089FBB400474BC2 /* UIView+BYSeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C544CC2089FBB400474BC2 /* UIView+BYSeat.m */; };
+		73DD9D05212AC9DB00CC38A0 /* BYWKWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 73DD9D03212AC9DB00CC38A0 /* BYWKWebViewController.h */; };
+		73DD9D06212AC9DB00CC38A0 /* BYWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DD9D04212AC9DB00CC38A0 /* BYWKWebViewController.m */; };
+		73DD9D0A212ACA3F00CC38A0 /* BYWeakScriptMessageDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 73DD9D08212ACA3F00CC38A0 /* BYWeakScriptMessageDelegate.h */; };
+		73DD9D0B212ACA3F00CC38A0 /* BYWeakScriptMessageDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73DD9D09212ACA3F00CC38A0 /* BYWeakScriptMessageDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,6 +241,8 @@
 		7322159D1CD1ED3F002A0792 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		7322159E1CD1ED3F002A0792 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		7322159F1CD1ED3F002A0792 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		734AED4920E634CE00113ADE /* BDYDevicePermissionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDYDevicePermissionManager.h; sourceTree = "<group>"; };
+		734AED4A20E634CE00113ADE /* BDYDevicePermissionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDYDevicePermissionManager.m; sourceTree = "<group>"; };
 		735E32B51D8687A1000004D1 /* UIControl+BYContinuous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+BYContinuous.h"; sourceTree = "<group>"; };
 		735E32B61D8687A1000004D1 /* UIControl+BYContinuous.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+BYContinuous.m"; sourceTree = "<group>"; };
 		735E32B91D868FF3000004D1 /* BYFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYFileManager.h; sourceTree = "<group>"; };
@@ -243,6 +251,10 @@
 		735E32BE1D869197000004D1 /* BYImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYImageManager.m; sourceTree = "<group>"; };
 		73C544CB2089FBB400474BC2 /* UIView+BYSeat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+BYSeat.h"; sourceTree = "<group>"; };
 		73C544CC2089FBB400474BC2 /* UIView+BYSeat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+BYSeat.m"; sourceTree = "<group>"; };
+		73DD9D03212AC9DB00CC38A0 /* BYWKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYWKWebViewController.h; sourceTree = "<group>"; };
+		73DD9D04212AC9DB00CC38A0 /* BYWKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYWKWebViewController.m; sourceTree = "<group>"; };
+		73DD9D08212ACA3F00CC38A0 /* BYWeakScriptMessageDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BYWeakScriptMessageDelegate.h; sourceTree = "<group>"; };
+		73DD9D09212ACA3F00CC38A0 /* BYWeakScriptMessageDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYWeakScriptMessageDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +339,8 @@
 				735E32BA1D868FF3000004D1 /* BYFileManager.m */,
 				735E32BD1D869197000004D1 /* BYImageManager.h */,
 				735E32BE1D869197000004D1 /* BYImageManager.m */,
+				734AED4920E634CE00113ADE /* BDYDevicePermissionManager.h */,
+				734AED4A20E634CE00113ADE /* BDYDevicePermissionManager.m */,
 			);
 			path = DataHelper;
 			sourceTree = "<group>";
@@ -477,8 +491,8 @@
 		7301EFB41CD0951600B50219 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7301EFB71CD0951600B50219 /* BYBaseViewController.h */,
-				7301EFB81CD0951600B50219 /* BYBaseViewController.m */,
+				73DD9D0C212ACB6700CC38A0 /* Base */,
+				73DD9D07212ACA2100CC38A0 /* Web */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -543,6 +557,26 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		73DD9D07212ACA2100CC38A0 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				73DD9D03212AC9DB00CC38A0 /* BYWKWebViewController.h */,
+				73DD9D04212AC9DB00CC38A0 /* BYWKWebViewController.m */,
+				73DD9D08212ACA3F00CC38A0 /* BYWeakScriptMessageDelegate.h */,
+				73DD9D09212ACA3F00CC38A0 /* BYWeakScriptMessageDelegate.m */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		73DD9D0C212ACB6700CC38A0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7301EFB71CD0951600B50219 /* BYBaseViewController.h */,
+				7301EFB81CD0951600B50219 /* BYBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -581,8 +615,10 @@
 				7301EFD61CD0951600B50219 /* AFURLSessionManager.h in Headers */,
 				7301EFDA1CD0951600B50219 /* UIActivityIndicatorView+AFNetworking.h in Headers */,
 				7301EFC11CD0951600B50219 /* BYMacro.h in Headers */,
+				73DD9D05212AC9DB00CC38A0 /* BYWKWebViewController.h in Headers */,
 				7301EFED1CD0951600B50219 /* Base64Encryption.h in Headers */,
 				7301EFCE1CD0951600B50219 /* AFSecurityPolicy.h in Headers */,
+				734AED4B20E634CE00113ADE /* BDYDevicePermissionManager.h in Headers */,
 				7301F0781CD0951600B50219 /* BYProgress.h in Headers */,
 				7301EFBF1CD0951600B50219 /* BYStringManager.h in Headers */,
 				7301EFE71CD0951600B50219 /* UIWebView+AFNetworking.h in Headers */,
@@ -591,6 +627,7 @@
 				7301F0081CD0951600B50219 /* NSString+Base64.h in Headers */,
 				7301F0061CD0951600B50219 /* NSData+CommonCrypto.h in Headers */,
 				7301EFD41CD0951600B50219 /* AFURLResponseSerialization.h in Headers */,
+				73DD9D0A212ACA3F00CC38A0 /* BYWeakScriptMessageDelegate.h in Headers */,
 				7301F0131CD0951600B50219 /* MBProgressHUD.h in Headers */,
 				7301F0761CD0951600B50219 /* BYBaseViewController.h in Headers */,
 				7301F0151CD0951600B50219 /* MyMD5.h in Headers */,
@@ -728,11 +765,13 @@
 				732215A91CD1ED3F002A0792 /* SDWebImageCompat.m in Sources */,
 				7301EFD51CD0951600B50219 /* AFURLResponseSerialization.m in Sources */,
 				7301EFD11CD0951600B50219 /* AFURLConnectionOperation.m in Sources */,
+				734AED4C20E634CE00113ADE /* BDYDevicePermissionManager.m in Sources */,
 				7301EFDF1CD0951600B50219 /* UIButton+AFNetworking.m in Sources */,
 				732215B81CD1ED3F002A0792 /* UIImage+GIF.m in Sources */,
 				7301EFDB1CD0951600B50219 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				7301EFCF1CD0951600B50219 /* AFSecurityPolicy.m in Sources */,
 				735E32BC1D868FF4000004D1 /* BYFileManager.m in Sources */,
+				73DD9D0B212ACA3F00CC38A0 /* BYWeakScriptMessageDelegate.m in Sources */,
 				7301EFE61CD0951600B50219 /* UIRefreshControl+AFNetworking.m in Sources */,
 				732215B41CD1ED3F002A0792 /* SDWebImagePrefetcher.m in Sources */,
 				7301EFE81CD0951600B50219 /* UIWebView+AFNetworking.m in Sources */,
@@ -753,6 +792,7 @@
 				7322157A1CD1AA94002A0792 /* BYRequestHelper.m in Sources */,
 				732215A71CD1ED3F002A0792 /* SDImageCache.m in Sources */,
 				7301EFD71CD0951600B50219 /* AFURLSessionManager.m in Sources */,
+				73DD9D06212AC9DB00CC38A0 /* BYWKWebViewController.m in Sources */,
 				7301EFBE1CD0951600B50219 /* BYDateManager.m in Sources */,
 				732215A51CD1ED3F002A0792 /* NSData+ImageContentType.m in Sources */,
 				732215B11CD1ED3F002A0792 /* SDWebImageManager.m in Sources */,
